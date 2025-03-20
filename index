@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PDF Viewer</h1>
+            <button id="download-button">Download PDF</button>
+        </div>
+        
+        <div class="pdf-controls">
+            <button id="prev-button">Previous</button>
+            <span id="page-info">Page <span id="page-num">0</span> of <span id="page-count">0</span></span>
+            <button id="next-button">Next</button>
+        </div>
+        
+        <div id="pdf-container">
+            <canvas id="pdf-viewer"></canvas>
+        </div>
+    </div>
+    
+    <!-- Include PDF.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <script>
+        // Set the worker source
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
